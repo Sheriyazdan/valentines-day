@@ -1,0 +1,1201 @@
+﻿<!DOCTYPE html>
+<html lang="ru" data-color-scheme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Sheriyazdan</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="manifest" href="assets/manifest.webmanifest?v=fbe9ca7687">
+    <meta name="theme-color" content="#15171A">
+    <link rel="apple-touch-icon" href="assets/icon-192x192.png?v=fbe9ca7687">
+
+    <link rel="preload" href="assets/dist/app.min.js?v=fbe9ca7687" as="script">
+    <link rel="preload" href="assets/dist/app.min.css?v=fbe9ca7687" as="style">
+
+    <link rel="preload stylesheet" href="css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" as="font" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload stylesheet" href="css2-1?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" as="font" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload stylesheet" href="css2-2?family=Playfair+Display:ital@0;1&display=swap" as="font" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link
+rel="stylesheet"
+href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+    <noscript>
+      <link rel="stylesheet" href="css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap">
+      <link rel="stylesheet" href="css2-1?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+      <link rel="stylesheet" href="css2-2?family=Playfair+Display:ital@0;1&display=swap">
+    </noscript>   
+
+    <script>
+  // ===============
+  // Basic Config
+  // ===============
+  let config = {
+    /* Replace it with your domain: ghost_host: 'https://komarov.design' */
+    ghost_url: 'https://www.komarov.design', 
+    
+    /* Settings > Integrations > New Custom Integration. Copy Key. Replace ghost_key below. */
+    ghost_key: '93d7a0b705f0dc1722cc857393', 
+
+    /* Ghost version: v4 or v3 */
+    ghost_version: 'v4',
+
+    /* Default Color Scheme. Values: preference(detects user setting), light, dark. */
+    color_scheme_default: 'preference',
+
+    /* Enable Progress Bar for posts */
+    enable_progress_bar: true,
+
+    /* Enable lightbox for post images */
+    enable_image_lightbox: true,
+
+    /* Enable Scroll Top Button */
+    enable_scroll_top: true,
+
+    /* Enable hyphens */
+    enable_hyphens: false,
+
+    /* Enable PWA - Progressive Web App */
+    enable_pwa: true,
+
+    /* Replace 'biron-demo' with your disqus account shortname */
+    disqus_shortname: 'biron-demo',
+
+    /* Open external links in posts in a new tab */
+    open_links_in_new_tab: true
+  }
+
+  // =========================
+  // Dark/Light Theme Handling
+  // =========================
+  let preferredTheme; 
+  if (config.color_scheme_default === 'preference') {
+    const preferredColorScheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    preferredTheme = localStorage.getItem('USER_COLOR_SCHEME') || preferredColorScheme;
+  } else {
+    preferredTheme = localStorage.getItem('USER_COLOR_SCHEME') || config.color_scheme_default;
+  }
+  document.documentElement.setAttribute("data-color-scheme", preferredTheme);
+
+  // =========================
+  // Set Hyphens property
+  // =========================
+  const root = document.documentElement;
+  if (config.enable_hyphens) {
+    root.style.setProperty('--global-hyphens', 'auto')
+  }
+  
+  // ===============================
+  // Global values used in the theme
+  // ===============================
+  const global = {
+    pagination_current_page: parseInt(``),
+    pagination_next_page: parseInt(``),
+    pagination_next_page_link: '',
+    pagination_max_pages: parseInt(''), 
+    pagination_posts_per_page: parseInt('10'),
+  }
+</script>
+
+    <link rel="stylesheet" type="text/css" href="assets/dist/app.min.css?v=fbe9ca7687">
+
+    <script async="" defer="" src="assets/dist/app.min.js?v=fbe9ca7687"></script>
+
+    <!--cssential--><style></style><!--/cssential-->
+
+    <meta name="description" content="Minimal gallery - это курируемая библиотека минималистических веб-дизайнов для вдохновения. Исследуйте стильные сайты и вдохновляйтесь минимализмом. Изучайте примеры и находите интересные и свежие идеи для своих проектов.">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="canonical" href="index.htm">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.htm">
+    
+    <meta property="og:site_name" content="Komarov.design - блог о дизайне">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Примеры веб-сайтов минимализм. Сайты в минимализме. Дизайн.">
+    <meta property="og:description" content="Minimal gallery - это курируемая библиотека минималистических веб-дизайнов для вдохновения. Исследуйте стильные сайты и вдохновляйтесь минимализмом. Изучайте примеры и находите интересные и свежие идеи для своих проектов.">
+    <meta property="og:url" content="https://www.komarov.design/minimal-gallery-kolliektsiia-saitov-v-minimalistichieskom-stilie/">
+    <meta property="og:image" content="https://www.komarov.design/content/images/2021/03/minimal-gallery.jpg">
+    <meta property="article:published_time" content="2021-03-23T08:29:06.000Z">
+    <meta property="article:modified_time" content="2021-03-23T08:29:06.000Z">
+    <meta property="article:tag" content="Вдохновение">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/designkomarov/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Примеры веб-сайтов минимализм. Сайты в минимализме. Дизайн.">
+    <meta name="twitter:description" content="Minimal gallery - это курируемая библиотека минималистических веб-дизайнов для вдохновения. Исследуйте стильные сайты и вдохновляйтесь минимализмом. Изучайте примеры и находите интересные и свежие идеи для своих проектов.">
+    <meta name="twitter:url" content="https://www.komarov.design/minimal-gallery-kolliektsiia-saitov-v-minimalistichieskom-stilie/">
+    <meta name="twitter:image" content="https://www.komarov.design/content/images/2021/03/minimal-gallery.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Egor Komarov">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Вдохновение">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1500">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Komarov.design - блог о дизайне",
+        "url": "https://www.komarov.design/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.komarov.design/content/images/2020/11/KOMAROVDESIGN.svg",
+            "width": 506,
+            "height": 37
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Egor Komarov",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.komarov.design/content/images/2020/11/ava2.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "url": "https://www.komarov.design/author/komarov/",
+        "sameAs": [
+            "http://t.me/egorkomarov"
+        ]
+    },
+    "headline": "Примеры веб-сайтов минимализм. Сайты в минимализме. Дизайн.",
+    "url": "https://www.komarov.design/minimal-gallery-kolliektsiia-saitov-v-minimalistichieskom-stilie/",
+    "datePublished": "2021-03-23T08:29:06.000Z",
+    "dateModified": "2021-03-23T08:29:06.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.komarov.design/content/images/2021/03/minimal-gallery.jpg",
+        "width": 2000,
+        "height": 1500
+    },
+    "keywords": "Вдохновение",
+    "description": "Minimal gallery - это курируемая библиотека минималистических веб-дизайнов для вдохновения. Исследуйте стильные сайты и вдохновляйтесь минимализмом. Изучайте примеры и находите интересные и свежие идеи для своих проектов.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.komarov.design/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.33">
+    <link rel="alternate" type="application/rss+xml" title="Komarov.design - блог о дизайне" href="rss/index.htm">
+    <script defer="" src="%40tryghost/portal%401.14.0/umd/portal.min.js" data-ghost="https://www.komarov.design/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer="" src="public/cards.min.js?v=fbe9ca7687"></script>
+    <link rel="stylesheet" type="text/css" href="public/cards.min.css?v=fbe9ca7687">
+    <script>
+var search_api_key = '93d7a0b705f0dc1722cc857393'; 
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="gtag/js?id=G-TGR2WMCJX4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TGR2WMCJX4');
+</script>
+
+
+<style>
+body {
+    font-size: 16px;
+    font-family: "Gordita", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+   -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;  
+}
+    
+    p {
+    font-size: 18px;
+}
+    
+    blockquote
+    
+    {
+        font-family: "Eastman-Bold";
+}
+
+ h1, h2, h3, h4, h5, h6 {
+font-family: "Eastman-Bold";
+    
+}
+
+.kg-image-card img {
+height: auto;
+}
+
+
+@font-face {
+font-family: "Eastman-Regular";
+src: url("assets/fonts/eastman/Eastman-Regular.woff2") format("woff2"); /* Modern Browsers */
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+
+font-family: "Eastman-Bold";
+src: url("assets/fonts/eastman/Eastman-Bold.eot"); /* IE9 Compat Modes */
+src: url("assets/fonts/eastman/Eastman-Bold-1.eot") format("embedded-opentype"), /* IE6-IE8 */
+   url("assets/fonts/eastman/Eastman-Bold.otf") format("opentype"), /* Open Type Font */
+url("assets/fonts/eastman/Eastman-Bold.svg") format("svg"), /* Legacy iOS */
+url("assets/fonts/eastman/Eastman-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+url("assets/fonts/eastman/Eastman-Bold.woff") format("woff"), /* Modern Browsers */
+url("assets/fonts/eastman/Eastman-Bold.woff2") format("woff2"); /* Modern Browsers */
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+
+@font-face {
+  font-family: 'gordita';
+  src: url('gordita/hinted/hinted-Gordita-Regular.eot');
+  src: url('gordita/hinted/hinted-Gordita-Regular-1.eot') format('embedded-opentype'),
+      url('gordita/hinted/hinted-Gordita-Regular.woff2') format('woff2'),
+      url('gordita/hinted/hinted-Gordita-Regular.woff') format('woff'),
+      url('gordita/hinted/hinted-Gordita-Regular.ttf') format('truetype'),
+      url('gordita/hinted/hinted-Gordita-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gordita';
+  src: url('gordita/hinted/hinted-Gordita-Light.eot');
+  src: url('gordita/hinted/hinted-Gordita-Light-1.eot') format('embedded-opentype'),
+      url('gordita/hinted/hinted-Gordita-Light.woff2') format('woff2'),
+      url('gordita/hinted/hinted-Gordita-Light.woff') format('woff'),
+      url('gordita/hinted/hinted-Gordita-Light.ttf') format('truetype'),
+      url('gordita/hinted/hinted-Gordita-Light.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gordita';
+  src: url('gordita/hinted/hinted-Gordita-Medium.eot');
+  src: url('gordita/hinted/hinted-Gordita-Medium-1.eot') format('embedded-opentype'),
+      url('gordita/hinted/hinted-Gordita-Medium.woff2') format('woff2'),
+      url('gordita/hinted/hinted-Gordita-Medium.woff') format('woff'),
+      url('gordita/hinted/hinted-Gordita-Medium.ttf') format('truetype'),
+      url('gordita/hinted/hinted-Gordita-Medium.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+    
+    }
+    
+    .kg-bookmark-card {
+        width:100%
+    }
+
+    a.kg-bookmark-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        min-height: 144px;
+        color: var(--color-text);
+        text-decoration: none;
+        background-color: var(--bg-white);
+        border:.5px solid var(--color-border)
+    }
+
+    a.kg-bookmark-container:active, a.kg-bookmark-container:focus, a.kg-bookmark-container:hover {
+        text-decoration:none
+    }
+
+    a.kg-bookmark-container:active .kg-bookmark-title, a.kg-bookmark-container:focus .kg-bookmark-title, a.kg-bookmark-container:hover .kg-bookmark-title {
+        color:var(--color-brand)
+    }
+
+    .kg-card-hascaption a.kg-bookmark-container {
+        border-bottom:1px solid var(--color-border)
+    }
+
+    .kg-bookmark-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        padding:24px
+    }
+
+    @media (min-width: 64em) {
+        .kg-bookmark-content {
+            padding:32px
+        }
+    }
+
+    .kg-bookmark-title {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        -webkit-transition: color .26s ease-in-out;
+        transition:color .26s ease-in-out
+    }
+
+    .kg-bookmark-description {
+        color: var(--color-gray);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
+        margin-top: 8px;
+        max-height: 48px;
+        overflow-y: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient:vertical
+    }
+
+    .kg-bookmark-metadata {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-top: 8px;
+        color: var(--color-gray);
+        font-size: 12px;
+        line-height:16px
+    }
+
+    .kg-bookmark-publisher {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width:240px
+    }
+
+    .kg-bookmark-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        margin-right:8px
+    }
+
+    .kg-bookmark-author:after {
+        content: "•";
+        margin:0 8px
+    }
+
+    .kg-bookmark-thumbnail {
+        position: relative;
+        min-width: 33%;
+        max-height:100%
+    }
+
+    .kg-bookmark-thumbnail img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit:cover
+    }
+    
+    @media (max-width: 39.99em) {
+        .kg-bookmark-container {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction:column
+        }
+
+        .kg-bookmark-thumbnail {
+            -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+            order: 1;
+            width: 100%;
+            min-height:160px
+        }
+
+        .kg-bookmark-content {
+            -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+            order:2
+        }
+    }
+
+</style>
+
+<meta name="p:domain_verify" content="31dfdb2ea889005e4b0aef2588ffec58">
+
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(69310678, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="watch/69310678" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<style>:root {--ghost-accent-color: #15171A;}</style>
+  </head>
+  <body class="post-template tag-design-inspiration">
+    <div class="search" id="search">
+  <div class="search__header">
+    <form action="/" method="get" class="search__form" id="search-form">
+      <input type="text" id="ghost-search-field" class="search__input" title="Поиск" placeholder="Поиск" autocomplete="off" required/="">
+      <div class="search__icon">
+        <i class="icon icon-search icon--lg">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.komarov.design/assets/icons/feather-sprite.svg?v=fbe9ca7687#search"></use>
+  </svg>
+</i>      </div>
+    </form>
+    <a tabindex="0" class="search--close" id="search-close">
+      <i class="icon icon-x icon--lg">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.komarov.design/assets/icons/feather-sprite.svg?v=fbe9ca7687#x"></use>
+  </svg>
+</i>    </a>
+  </div>
+  <div class="search-helper">
+        <div class="search__tag js-search-tag" tabindex="0" title="Инструменты">Инструменты</div>
+        <div class="search__tag js-search-tag" tabindex="0" title="Вдохновение">Вдохновение</div>
+        <div class="search__tag js-search-tag" tabindex="0" title="Статьи о дизайне">Статьи о дизайне</div>
+        <div class="search__tag js-search-tag" tabindex="0" title="Шрифты">Шрифты</div>
+        <div class="search__tag js-search-tag" tabindex="0" title="Книги">Книги</div>
+        <div class="search__tag js-search-tag" tabindex="0" title="Уроки">Уроки</div>
+  </div>
+  <div class="search-content">
+    <div class="search-result" id="ghost-search-results"></div>
+  </div>
+</div>
+
+    <div class="menu" id="menu">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 is-flex end-xs">
+        <a tabindex="0" class="menu--close" id="menu-close">
+          <i class="icon icon-x icon--lg">
+  <svg class="icon__svg">
+    <img src="img/delete_unapprove_discard_remove_x_red_icon-icons.com_55984.svg"  class="img_svg_head">
+  </svg>
+
+</i>        </a>
+      </div>
+      <div class="col-xs-12">
+        <div class="menu__main">
+          <ul class="nav">
+    <li class="nav-stati"><a href="#">Saniya</a></li>
+    <li class="nav-instrumienty"><a href="#">Saniya</a></li>
+    <li class="nav-kradi-kak-khudozhnik"><a href="#">Saniya</a></li>
+    <li class="nav-kirillichieskiie-shrifty"><a href="#">Saniya</a></li>
+    <li class="nav-knighi"><a href="#">Saniya</a></li>
+    <li class="nav-uroki"><a href="#">Saniya</a></li>
+    <li class="nav-shkoly-dizaina"><a href="#">Saniya</a></li>
+</ul>
+
+        </div>
+        <div class="menu__secondary">
+          <ul class="nav">
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="gif_img" src="img/giphy.gif" alt="">
+</div>
+      <header class="header">
+  <div id="progress"></div>
+  <div class="header__top">
+    <div class="container-fluid wrapper">
+      <div class="row">
+        <div class="col-xs-3 col-md-4 middle-xs is-flex">          
+          <div class="header__theme" id="heart">
+            <a class="header__theme--toggle" id="theme-dark" tabindex="0" title="Темная тема" aria-label="Темная тема">
+              <i class="icon icon-moon icon--sm">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.komarov.design/assets/icons/feather-sprite.svg?v=fbe9ca7687#moon"></use>
+  </svg>
+</i>            </a>
+            <a class="header__theme--toggle" id="theme-light" tabindex="0" title="Светлая тема" aria-label="Светлая тема">
+              <i class="icon icon-sun icon--sm">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.komarov.design/assets/icons/feather-sprite.svg?v=fbe9ca7687#sun"></use>
+  </svg>
+</i>            </a>
+          </div>
+        </div>
+        <div class="person_who">
+          <div class="person__content">
+            <img src="">
+            <span></span>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-4 center-xs">
+          <div class="header__brand flex-cc">
+            <a href="#">
+                <div class="header__logo">
+                  <img src="img/photo1644683872.png">
+                </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-xs-3 col-md-4 end-xs middle-xs is-flex">
+          <div class="header__member">
+            <a class="header__member--open" tabindex="0" aria-label="Подписка/Войти">
+              <i class="icon icon-user icon--sm">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.komarov.design/assets/icons/feather-sprite.svg?v=fbe9ca7687#user"></use>
+  </svg>
+</i>            </a>
+
+          </div>
+
+          <button id="menu-open" class="header__menu--open hamburger" type="button" title="Меню" aria-label="Меню">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__bottom">
+    <div class="container-fluid wrapper">
+      <div class="row">
+        <nav class="col-xs header__nav">
+          <ul class="nav">
+    <li class="nav-stati"><a href="#">Saniya</a></li>
+    <li class="nav-instrumienty"><a href="#">Saniya</a></li>
+    <li class="nav-kradi-kak-khudozhnik"><a href="#">Saniya</a></li>
+    <li class="nav-kirillichieskiie-shrifty"><a href="#">Saniya</a></li>
+    <li class="nav-knighi"><a href="#">Saniya</a></li>
+    <li class="nav-uroki"><a href="#">Saniya</a></li>
+    <li class="nav-shkoly-dizaina"><a href="#">Saniya</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+    <main class="main">
+      
+<div class="container-fluid wrapper">
+  <div class="window__hero__block__info">
+    <div class="window__main__block">
+      <img class="x__btn" onclick="Xbutton(this)" src="img/delete_unapprove_discard_remove_x_red_icon-icons.com_55984.svg">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.34 (3).jpeg">
+      <span class="hero__text">В этой жизни мне очень повезло, ведь я повстречал такую девушку как ты. Твой голос прекрасен, твои руки такие нежные, что от одного прикосновения я ощущаю всю твою любовь. Нет на свете красивее человека внешне и внутренне. Всё что я чувствую к тебе не описать словами, готовь повторить эти слова снова и снова.
+      </span>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="post-hero">
+    <figure class="post-hero__image">
+      <img class="lazyload" data-srcset="img/pp.jfif,
+                img/pp.jfif,
+                img/pp.jfif,
+                img/pp.jfif" data-sizes="(max-width: 800px) 50vw,
+                (max-width: 1170px) 60vw,
+                1400px" data-src="img/pp.jfif" src="img/pp.jfif" alt="Minimal gallery - лучшие веб-сайты в стиле &quot;минимализм&quot;">
+    </figure>
+  <div class="post-hero__content"> 
+    <div class="post-hero__header">
+          <a class="tag-design-inspiration post-hero__tag" href="#" onclick="openModalHeroBlock(this)" title="Вдохновение" aria-label="Вдохновениеs">Сания</a>
+    </div>
+
+    <h1 class="post-hero__title">Салжанова Сания</h1>
+
+        <time datetime="2021-03-23" class="post-hero__date">
+          03 янв. 2003 г.
+        </time>
+      </div>
+    </div>
+  </div>
+</div>    
+</div>
+<div class="container-fluid wrapper">
+  <div class="window__hero__block__info">
+    <div class="window__main__block">
+      <img class="x__btn" onclick="Xbutton(this)" src="img/delete_unapprove_discard_remove_x_red_icon-icons.com_55984.svg"> 
+      <img src="img/person.jfif">
+      <div class="hero__text">Content</div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="post-hero">
+    <figure class="post-hero__image">
+      <img class="lazyload" data-srcset="img/pp2.jfif,
+                img/pp2.jfif,
+                img/pp2.jfif,
+                img/pp2.jfif" data-sizes="(max-width: 800px) 50vw,
+                (max-width: 1170px) 60vw,
+                1400px" data-src="img/pp2.jfif" src="img/pp2.jfif" alt="Minimal gallery - лучшие веб-сайты в стиле &quot;минимализм&quot;">
+    </figure>
+  <div class="post-hero__content">
+    <div class="post-hero__header">
+          <a class="tag-design-inspiration post-hero__tag" href="#" onclick="openModalHeroBlock(this)" title="Вдохновение" aria-label="Вдохновениеs" id="person_data">Шерияздан</a>
+    </div>
+
+    <h1 class="post-hero__title">Хумарсерик Шерияздан</h1>
+
+        <time datetime="2021-03-23" class="post-hero__date">
+          11 июнь 2003г
+        </time>
+      </div>
+    </div>
+  </div>
+</div>    
+</div>
+<h1 class="text-stih">Стихи</h1>
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">О любви</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">14 Февраля</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">О Сание</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">          
+    Иногда заканчиваются слова,
+    <br>
+    От мыслей о тебе кружиться голова.
+    <br>
+    С тобой мой мир как в сказке,
+    <br>
+    Хочу утонуть отдавшись твоей ласке.
+    <br>
+    <br>
+    Жизнь всего лишь игра,
+    <br>
+    В которой нас судьба свела.
+    <br>
+    Люблю тебя, это всерьёз,
+    <br>
+    Прошу тебя ненадо слез.
+    <br>
+    <br>
+    Каждую ночь ты мне снишься,
+    <br>
+    В иной жизни в памяти сохранишься.
+    <br>
+    И все к чему ты стремишься,
+    <br>
+    В один момент всего лишишься.</p><p></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    Хочу сказать тебе в этот день,
+    <br>
+    Я всегда рядом с тобой, как твой тень.
+    <br> 
+    Мои чувства к тебе теперь не в секрете,
+    <br>
+    Люблю тебя больше всех на свете.
+    <br>
+    <br> 
+    Пускай твоё сердце о любви поёт,
+    <br>
+    От твоей улыбки разтает лёд.
+    <br> 
+    В них сияет радостное солнце,
+    <br>
+    Которая на меня наткнётся.
+    <br>
+    <br>
+    Я выбрал тебя не спроста,
+    <br>
+    В тебе виднеется твоя доброта.
+    <br>
+    Всё это сто раз повторю,
+    <br>
+    О том как сильно тебя люблю.
+    <br>
+    
+  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    На окне ночь и яркая луна,
+    <br>
+    Снова и снова в голове она.
+    <br> 
+    Ты словно лучик света,
+    <br>
+    В моей душе как сигарета.
+    <br>
+    <br> 
+    Забудь ты все, забудь о боли,
+    <br>
+    Дари мне всегда надежду, любови.
+    <br> 
+    Хоть судьба моя так и бессердечна,
+    <br>
+     Наша любовь длится вечно.
+    <br>
+    <br>
+    Ведь я тлею и в радость и в горе,
+    <br>
+    Без тебя нет мира тем более.
+    <br>
+    Хочу поцеловать тебя вновь,
+    <br>
+    Все что чувствую к тебе - только любовь.
+    <br>
+  </div>
+</div>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="img/218b6b43-e2a3-4f92-b4d6-bb530b489656.jfif" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/22e183e8-767b-4d44-a835-35791fbd857a.jfif" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/b7981f38-e2ef-406d-8a37-694b82d92a63.jfif" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.34.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-02 at 19.01.08.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.33.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img class="img_slide" src="img/WhatsApp Image 2022-02-12 at 01.59.34 (2).jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img class="img_3" src="img/WhatsApp Image 2022-02-12 at 01.59.33 (3).jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.33 (2).jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.33 (1).jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.30.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-12 at 01.59.33 (4).jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-02 at 19.58.14.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-04 at 19.19.31.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-02 at 19.58.14 (1).jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="img/WhatsApp Image 2022-02-02 at 19.01.08 (1).jpeg" />
+    </div>
+  </div>
+<div class="swiper-pagination"></div>
+
+  </div>
+  <script src="js.js"></script>
+
+    </main>
+
+      <footer class="footer">
+  <div class="container-fluid wrapper">
+    <div class="footer__top">
+      <div class="row row_last">
+        <div class="col-xs-12 col-md-3">
+          <h5 class="m-b-sm">Навигация</h5>
+          <ul class="nav">
+    <li class="nav-stati"><a href="#">Saniya</a></li>
+    <li class="nav-instrumienty"><a href="#">Sheriyazdan</a></li>
+
+          </div>
+        <div class="col-xs-12 col-md-3">
+          <h5 class="m-b-sm">Социальные сети Saniya</h5>
+          <div class="social-links">
+  <a class="social-links__item instagram" href="https://www.instagram.com/ssalzhanova/" target="_blank" title="Instagram" aria-label="Instagram" rel="noreferrer">
+    <i class="icon icon-instagram">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.instagram.com/ssalzhanova/"></use>
+  </svg>
+</i>    <p>Instagram</p>
+  </a>
+  <a class="social-links__item linkedin" href="https://vk.com/id601001799" target="_blank" title="VK" aria-label="VK" rel="noreferrer">
+    <i class="icon icon-linkedin">
+  <svg class="icon__svg">
+    <use xlink:href="https://vk.com/id601001799"></use>
+  </svg>
+</i>    <p>VK</p>
+  </a>
+</div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <h5 class="m-b-sm">Социальные сети Sheriyazdan</h5>
+          <div class="social-links">
+  <a class="social-links__item facebook" href="https://github.com/Sheriyazdan" target="_blank" title="Git" aria-label="Git" rel="noreferrer">
+    <i class="icon icon-facebook">
+  <svg class="icon__svg">
+    <use xlink:href="https://github.com/Sheriyazdan"></use>
+  </svg>
+</i>    <p>Git hub</p>
+  </a>
+  <a class="social-links__item instagram" href="https://www.instagram.com/khmrsrk/" target="_blank" title="Instagram" aria-label="Instagram" rel="noreferrer">
+    <i class="icon icon-instagram">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.instagram.com/khmrsrk/"></use>
+  </svg>
+</i>    <p>Instagram</p>
+  </a>
+  <a class="social-links__item linkedin" href="https://vk.com/id644892190" target="_blank" title="VK" aria-label="VK" rel="noreferrer">
+    <i class="icon icon-linkedin">
+  <svg class="icon__svg">
+    <use xlink:href="https://vk.com/id644892190"></use>
+  </svg>
+</i>    <p>VK</p>
+  </a>
+</div>
+        </div>
+            <p data-members-error=""><!-- error message will appear here --></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>by<a href="#">  Khumarserik Sheriyazdan</a>.</div>
+    </div>
+  </div>
+</footer>
+      <div class="scroll-to-top"><i class="icon icon-arrow-up">
+  <svg class="icon__svg">
+    <use xlink:href="https://www.komarov.design/assets/icons/feather-sprite.svg?v=fbe9ca7687#arrow-up"></use>
+  </svg>
+</i></div>
+
+    <svg class="wave-gradient" version="1.1">
+  <defs>
+    <lineargradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--color-primary)"></stop>
+      <stop offset="100%" stop-color="var(--color-secondary)"></stop>
+    </lineargradient>
+  </defs>
+</svg>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      let changeTheme = document.querySelector('.header__theme')
+      changeTheme.addEventListener('click', ()=>{
+        document.querySelector('.header__theme').classList.toggle('active')
+      })
+      if (config.enable_pwa && 'serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+
+      openModalHeroBlock = (val) =>{
+        const clickbtn = val.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement
+        clickbtn.querySelector('.window__hero__block__info').classList.add('active')
+      }
+      Xbutton = (el)=>{
+        const elbtn = el.parentElement.parentElement.parentElement
+        elbtn.querySelector('.window__hero__block__info').classList.remove('active')
+      }
+    </script>
+
+    <style>
+      .img_3{
+        object-fit: cover;
+        transform: translateY(-38px);
+        height: 382px;
+      }
+      .row_last{
+        display: flex;
+        justify-content: center;
+      }
+      .img_slide{
+        transform: rotate(270deg) translate(-21px, 6px);
+        height: 315px;
+        object-fit: cover;
+      }
+      .window__hero__block__info{
+        display: none;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        left: 0;
+        z-index: 10000;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .window__hero__block__info.active{
+        display: block;
+      }
+      .x__btn{
+        position: absolute;
+        width: 20px;
+        height: 32px;
+        right: 3px;
+        top: 0;
+      }
+      .img_svg_head{
+        margin-top: 2px;
+        margin-left: 3px;
+        width: 25px;
+        height: 25px;
+      }
+      .menu .nav{
+        margin-top: 2px;
+        margin-left: 3px;
+        width: 25px;
+        height: 25px;
+      }
+      .window__main__block .x__btn{
+        cursor: pointer;
+      }
+      .icon__svg{
+        display: none;
+      }
+[data-color-scheme="dark"] .header__logo {
+filter: invert(1);
+}
+    
+#load-more-posts[disabled] {
+display: none;
+}
+  .header__theme{
+    background: url(img/heartt.png) 50% 50% no-repeat;
+    background-size: contain;
+  }
+  .gif_img{
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .person_who{
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    display: none;
+  }
+  .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+
+  .swiper-wrapper{
+    display: flex;
+  }    
+
+  .text-stih{
+    display: flex;
+    justify-content: center;
+  }
+  .nav.nav-pills.mb-3{
+    display: flex;
+    justify-content: center;
+  }
+  .tab-content{
+    display: flex;
+    justify-content: center;
+  }
+  .nav-link.active{
+    background-color: #e50b4f !important;
+    color: #ffffff !important;
+  }
+  .nav-link{
+    color: #15171A !important;
+  }
+  .window__main__block{
+    width: 350px;
+    height: 435px;
+    position: relative;
+    top: 34%;
+    left: 43%;
+    background: #FFF;
+    padding: 20px;
+    border-radius: 5%;
+  }
+  .hero__text{
+    color: black;
+  }
+  @media(max-width:764px){
+    .window__main__block{
+      left: 26%;
+    }
+  }
+  @media(max-width:532px){
+    .window__main__block{
+      left: 16%;
+    }
+  }
+  @media(max-width:532px){
+    .window__main__block{
+      left: 6%;
+    }
+  }
+  [data-color-scheme="dark"] .header__logo {
+    filter: none;
+  }
+/* #heart { 
+    position: relative; 
+} 
+
+#heart:before, #heart:after { 
+    position: absolute; 
+    content: ""; 
+    left: 10px;
+    top: -60px;
+    width: 50px; 
+    height: 80px; 
+    background: red; 
+    border-radius: 50px 50px 0 0; 
+    transform: rotate(-45deg) scale(0.2);; 
+    transform-origin: 0 100%; 
+} 
+
+#heart:after { 
+    left: -39px; 
+    transform: rotate(45deg) scale(0.2);; 
+    transform-origin :100% 100%; 
+} */
+
+</style>
+
+<script>
+        var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+</script>
+  </body>
+</html>
